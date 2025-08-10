@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Comparison</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: gainsboro;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+            padding: 20px 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .car-card {
+            background-color: rgba(186, 75, 6, 0.956);
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgb(251, 0, 75);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .car-card:hover {
+            transform: scale(1.05);
+        }
+
+        .car-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .car-details {
+            padding: 15px;
+        }
+
+        .car-details h2 {
+            margin: 0;
+            font-size: 20px;
+            color: black;
+        }
+
+        .car-details ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .car-details ul li {
+            margin-bottom: 5px;
+            color: black;
+        }
+
+        .back-btn {
+            display: block;
+            width: 120px;
+            margin: 20px auto;
+            text-align: center;
+            background-color: #d10725b8;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background-color: darkorange;
+        }
+    </style>
+    <h1>Car Comparison</h1>
+
+    <div class="container">
+        <div class="car-card">
+            <img src="../images/bmw-m5.jpg" alt="BMW M5">
+            <div class="car-details">
+                <h2>BMW M5 Competition</h2>
+                <ul>
+                    <li>Price: ₹ 1.99 Crore</li>
+                    <li>Top Speed: 305 kmph</li>
+                    <li>Horsepower: 627 hp</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <img src="../images/Lamborghini.jpg" alt="Lamborghini Huracan">
+            <div class="car-details">
+                <h2>Lamborghini Huracan STO</h2>
+                <ul>
+                    <li>Price: ₹ 4.99 Crore</li>
+                    <li>Top Speed: 310 kmph</li>
+                    <li>Horsepower: 631 hp</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <img src="../images/bugatti-chiron.jpg" alt="Bugatti Chiron">
+            <div class="car-details">
+                <h2>Bugatti Chiron</h2>
+                <ul>
+                    <li>Price: ₹ 28.40 Crore</li>
+                    <li>Top Speed: 420 kmph</li>
+                    <li>Horsepower: 1500 hp</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="car-card">
+            <img src="../images/nissan-gtr-r35.jpg" alt="Nissan GTR R35">
+            <div class="car-details">
+                <h2>Nissan GTR R35</h2>
+                <ul>
+                    <li>Price: ₹ 2.12 Crore</li>
+                    <li>Top Speed: 315 kmph</li>
+                    <li>Horsepower: 565 hp</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <a class="back-btn" href="../2.Create page/page.html">← Back to Home</a>
+
+</body>
+</html>

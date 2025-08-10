@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars_96</title>
+</head>
+<body>
+    <style>
+        .header{
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+        .header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .header ul li a {
+            display: inline-block;
+            text-decoration: none;
+            margin-right: 10px;
+            color: white;
+            background-color: orangered;
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        .header ul li a:hover {
+            color: black;
+        }   
+    </style>
+    <div class="header">
+        <ul>
+            <li><a href="C:\WT_LAB\2.Create page\page.html">HOME</a></li>
+        </ul>
+    </div>
+    <center>
+        <h1>IMAGE MAPPING</h1>
+        <img src="bmw.jpg" usemap="#BMW" alt="carpicture" />
+    </center>
+
+    <map name="BMW">
+        <area shape="circle" coords="372,330,64"
+              href="https://www.bmw.in/en/topics/owners/original-bmw-accessories/bmw-wheels-tyres.html"
+              alt="BMW logo" />
+              
+        <area shape="poly" coords="407,160,517,158,460,202,316,204"
+              href="https://boodmo.com/catalog/4504-front_windshield/m56-bmw/?srsltid=AfmBOopbyp25x_MMOfJt7W1ILx4VfWCnkk88styvEPGikFVGobIaqpVS" />
+
+        <area shape="poly" coords="322,258,198,267,209,282,283,274"
+              href="https://boodmo.com/catalog/3686-headlight/m56-bmw/?srsltid=AfmBOopdN17fkOROz8Y62XcT0942KJ_HDwzwN772UsgaP1p5nUhc4n48" />
+    </map>
+</body>
+</html>
+
