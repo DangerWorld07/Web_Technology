@@ -65,12 +65,11 @@ function validateForm() {
     document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
 
 
-    // --- Basic JavaScript Validation (8 Elements) ---
+    // --- Basic JavaScript Validation (All relevant elements) ---
 
-    // 1. Full Name (Improved Validation)
+    // 1. Full Name
     const fullName = document.getElementById('fullName');
-    // Allows letters, spaces, hyphens, apostrophes, and dots
-    const namePattern = /^[a-zA-Z\s'-.]+$/;
+    const namePattern = /^[a-zA-Z\s'-.]+$/; // Allows letters, spaces, hyphens, apostrophes, and dots
     if (fullName.value.trim() === '') {
         showError('fullNameError', 'Full Name is required.');
         isValid = false;
@@ -107,75 +106,19 @@ function validateForm() {
         clearError('phoneError');
     }
 
-    // 4. Gender
-    const gender = document.getElementById('gender');
-    if (gender.value === '') {
-        showError('genderError', 'Please select your Gender.');
+    // 4. Delivery Address
+    const deliveryAddress = document.getElementById('deliveryAddress');
+    if (deliveryAddress.value.trim() === '') {
+        showError('deliveryAddressError', 'Delivery Address is required.');
+        isValid = false;
+    } else if (deliveryAddress.value.trim().length < 15) { // Simple length check
+        showError('deliveryAddressError', 'Please enter a more complete address.');
         isValid = false;
     } else {
-        clearError('genderError');
+        clearError('deliveryAddressError');
     }
 
-    // 5. Plot/House Number
-    const plotNumber = document.getElementById('plotNumber');
-    if (plotNumber.value.trim() === '') {
-        showError('plotNumberError', 'Plot/House Number is required.');
-        isValid = false;
-    } else if (!/^[a-zA-Z0-9\s/,-]+$/.test(plotNumber.value)) {
-        showError('plotNumberError', 'Invalid characters in Plot/House Number (e.g., A-Z, 0-9, /, -, comma).');
-        isValid = false;
-    } else {
-        clearError('plotNumberError');
-    }
-
-    // 6. Street Name
-    const streetName = document.getElementById('streetName');
-    if (streetName.value.trim() === '') {
-        showError('streetNameError', 'Street Name is required.');
-        isValid = false;
-    } else if (!/^[a-zA-Z0-9\s.,'-]+$/.test(streetName.value)) {
-        showError('streetNameError', 'Invalid characters in Street Name (e.g., A-Z, 0-9, space, comma, dot, hyphen, apostrophe).');
-        isValid = false;
-    } else {
-        clearError('streetNameError');
-    }
-
-    // 7. District
-    const district = document.getElementById('district');
-    if (district.value.trim() === '') {
-        showError('districtError', 'District is required.');
-        isValid = false;
-    } else if (!/^[a-zA-Z\s.-]+$/.test(district.value)) {
-        showError('districtError', 'Invalid characters in District (e.g., A-Z, space, dot, hyphen).');
-        isValid = false;
-    } else {
-        clearError('districtError');
-    }
-
-    // 8. State
-    const state = document.getElementById('state');
-    if (state.value.trim() === '') {
-        showError('stateError', 'State is required.');
-        isValid = false;
-    } else if (!/^[a-zA-Z\s.-]+$/.test(state.value)) {
-        showError('stateError', 'Invalid characters in State (e.g., A-Z, space, dot, hyphen).');
-        isValid = false;
-    } else {
-        clearError('stateError');
-    }
-
-    // --- HTML5 Self-Validating Elements & Additional JS ---
-
-    // Pincode (pattern="[0-9]{6}" and required in HTML)
-    const pincode = document.getElementById('pincode');
-    if (!pincode.checkValidity()) {
-        showError('pincodeError', 'Pincode must be 6 digits.');
-        isValid = false;
-    } else {
-        clearError('pincodeError');
-    }
-
-    // Car Make (required in HTML, datalist for suggestions)
+    // 5. Car Make
     const carMake = document.getElementById('carMake');
     if (carMake.value.trim() === '') {
         showError('carMakeError', 'Car Make is required.');
@@ -184,16 +127,7 @@ function validateForm() {
         clearError('carMakeError');
     }
 
-    // Accessory Type (required in HTML)
-    const accessoryType = document.getElementById('accessoryType');
-    if (!accessoryType.checkValidity()) {
-        showError('accessoryTypeError', 'Please select an Accessory Type.');
-        isValid = false;
-    } else {
-        clearError('accessoryTypeError');
-    }
-
-    // Accessories Checkbox (at least one must be selected)
+    // 6. Accessories Checkbox (at least one must be selected)
     const checkboxes = document.querySelectorAll('input[name="accessories"]:checked');
     if (checkboxes.length === 0) {
         showError('accessoriesError', 'Please select at least one accessory.');
@@ -202,18 +136,18 @@ function validateForm() {
         clearError('accessoriesError');
     }
 
-    // Quantity (min="1" max="100" and required in HTML)
+    // 7. Quantity
     const quantity = document.getElementById('quantity');
-    if (!quantity.checkValidity()) {
-        showError('quantityError', 'Quantity must be between 1 and 100.');
+    if (!quantity.checkValidity()) { // HTML5 min/max validation
+        showError('quantityError', 'Quantity must be between 1 and 10.');
         isValid = false;
     } else {
         clearError('quantityError');
     }
 
-    // Preferred Delivery Date (min date and required in HTML)
+    // 8. Preferred Delivery Date
     const deliveryDate = document.getElementById('deliveryDate');
-    if (!deliveryDate.checkValidity()) {
+    if (!deliveryDate.checkValidity()) { // HTML5 min date validation
         showError('deliveryDateError', 'Please select a valid future delivery date.');
         isValid = false;
     } else {
@@ -245,10 +179,9 @@ function validateForm() {
                 showError('expiryDateError', 'Please enter a valid expiry month/year.');
                 isValid = false;
             } else {
-                // Additional JS check for expiry date to be in the future
                 const [year, month] = expiryDate.value.split('-').map(Number);
                 const currentYear = new Date().getFullYear();
-                const currentMonth = new Date().getMonth() + 1; // getMonth is 0-indexed
+                const currentMonth = new Date().getMonth() + 1;
 
                 if (year < currentYear || (year === currentYear && month < currentMonth)) {
                     showError('expiryDateError', 'Expiry date cannot be in the past.');
@@ -270,7 +203,6 @@ function validateForm() {
 
     if (isValid) {
         alert('Form submitted successfully! Thank you for your order.');
-        // In a real application, you would send this data to your backend.
         const formData = new FormData(document.getElementById('orderForm'));
         const data = {};
         for (let [key, value] of formData.entries()) {
@@ -282,7 +214,6 @@ function validateForm() {
             }
         }
         console.log('Form Data:', data);
-        // document.getElementById('orderForm').reset(); // Optionally reset form after successful submission
     }
 
     return isValid;

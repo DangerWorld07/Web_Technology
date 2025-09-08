@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Accessories Order Form</title>
+    <title>Car Accessories Order Form - Simple</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for a nicer look -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="form-container">
@@ -17,31 +15,20 @@
 
                 <div class="form-group">
                     <label for="fullName">Full Name:</label>
-                    <input type="text" id="fullName" name="fullName" required placeholder="Full Name">
+                    <input type="text" id="fullName" name="fullName" required placeholder=" ">
                     <div class="error-message" id="fullNameError"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required placeholder="name@example.com">
+                    <input type="email" id="email" name="email" required placeholder=" ">
                     <div class="error-message" id="emailError"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="e.g., 9876543210" required>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder=" " required>
                     <div class="error-message" id="phoneError"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="gender">Gender:</label>
-                    <select id="gender" name="gender" required>
-                        <option value="">Select Gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <div class="error-message" id="genderError"></div>
                 </div>
 
             </fieldset>
@@ -50,34 +37,9 @@
                 <legend>Delivery Address</legend>
 
                 <div class="form-group">
-                    <label for="plotNumber">Plot/House Number:</label>
-                    <input type="text" id="plotNumber" name="plotNumber" required placeholder="e.g., 123">
-                    <div class="error-message" id="plotNumberError"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="streetName">Street Name:</label>
-                    <input type="text" id="streetName" name="streetName" required placeholder="e.g., Main Street">
-                    <div class="error-message" id="streetNameError"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="district">District:</label>
-                    <input type="text" id="district" name="district" required placeholder=" ">
-                    <div class="error-message" id="districtError"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="state">State:</label>
-                    <input type="text" id="state" name="state" required placeholder="">
-                    <div class="error-message" id="stateError"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="pincode">Pincode:</label>
-                    <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" required placeholder=" ">
-                    <small>Format: 6 digits (e.g., 123456)</small>
-                    <div class="error-message" id="pincodeError"></div>
+                    <label for="deliveryAddress">Delivery Address:</label>
+                    <textarea id="deliveryAddress" name="deliveryAddress" rows="4" required placeholder=" "></textarea>
+                    <div class="error-message" id="deliveryAddressError"></div>
                 </div>
             </fieldset>
 
@@ -86,32 +48,15 @@
 
                 <div class="form-group">
                     <label for="carMake">Car Make:</label>
-                    <input type="text" id="carMake" name="carMake" list="carMakes" required placeholder="e.g., Toyota">
+                    <input type="text" id="carMake" name="carMake" list="carMakes" required placeholder=" ">
                     <datalist id="carMakes">
                         <option value="Toyota"></option>
                         <option value="Honda"></option>
                         <option value="Ford"></option>
                         <option value="BMW"></option>
                         <option value="Mercedes-Benz"></option>
-                        <option value="Audi"></option>
-                        <option value="Nissan"></option>
-                        <option value="Hyundai"></option>
                     </datalist>
                     <div class="error-message" id="carMakeError"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="accessoryType">Accessory Type:</label>
-                    <select id="accessoryType" name="accessoryType" required>
-                        <option value="">Select Type</option>
-                        <option value="interior">Interior</option>
-                        <option value="exterior">Exterior</option>
-                        <option value="audio">Audio & Electronics</option>
-                        <option value="performance">Performance</option>
-                        <option value="lighting">Lighting</option>
-                        <option value="safety">Safety</option>
-                    </select>
-                    <div class="error-message" id="accessoryTypeError"></div>
                 </div>
 
                 <div class="form-group">
@@ -125,21 +70,13 @@
                         <label for="ledLights">LED Headlights</label>
                         <input type="checkbox" id="spoiler" name="accessories" value="Spoiler">
                         <label for="spoiler">Spoiler</label>
-                        <input type="checkbox" id="stereo" name="accessories" value="Car Stereo System">
-                        <label for="stereo">Car Stereo System</label>
-                        <input type="checkbox" id="dashcam" name="accessories" value="Dashcam">
-                        <label for="dashcam">Dashcam</label>
-                        <input type="checkbox" id="airFreshener" name="accessories" value="Air Freshener">
-                        <label for="airFreshener">Air Freshener</label>
-                        <input type="checkbox" id="wheelCovers" name="accessories" value="Wheel Covers">
-                        <label for="wheelCovers">Wheel Covers</label>
                     </div>
                     <div class="error-message" id="accessoriesError"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="quantity">Quantity of Accessories (overall):</label>
-                    <input type="number" id="quantity" name="quantity" min="1" max="100" value="1" required>
+                    <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
                     <div class="error-message" id="quantityError"></div>
                 </div>
 
@@ -147,11 +84,6 @@
                     <label for="deliveryDate">Preferred Delivery Date:</label>
                     <input type="date" id="deliveryDate" name="deliveryDate" required>
                     <div class="error-message" id="deliveryDateError"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="comments">Additional Comments:</label>
-                    <textarea id="comments" name="comments" rows="4" placeholder="Any specific requirements or notes..."></textarea>
                 </div>
 
             </fieldset>
@@ -178,7 +110,7 @@
                         <input type="text" id="cardNumber" name="cardNumber" pattern="[0-9]{13,16}" placeholder="XXXX XXXX XXXX XXXX">
                         <div class="error-message" id="cardNumberError"></div>
                     </div>
-                    <div class="form-group split-50">
+                    <div class="form-group split-fields">
                         <div>
                             <label for="expiryDate">Expiry Date:</label>
                             <input type="month" id="expiryDate" name="expiryDate" placeholder="MM/YY">
