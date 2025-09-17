@@ -1,13 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab Exercises</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Exercises</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url("./carback.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2.5rem;
+      color: #ffeb3b;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      gap: 20px;
+    }
+
+    .exercise {
+      width: 250px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .exercise:hover {
+      transform: scale(1.08);
+    }
+
+    .exercise a {
+      text-decoration: none;
+      color: #03a9f4;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .exercise:hover a {
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-    <ol>
-        <li><a href="./1.Image Mapping/imagemap.html">Exercise</a></li>
-    </ol>
+  <h1>Lab Exercises</h1>
+  <div class="container">
+    <div class="exercise"><a href="./1.Image Mapping/imagemap.html">Exercise 1</a></div>
+    <div class="exercise"><a href="./2.Create page/index.html">Exercise 2</a></div>
+    <div class="exercise"><a href="./3.CSS/home.html">Exercise 3</a></div>
+    <div class="exercise"><a href="./4.validation form/index.html">Exercise 4</a></div>
+  </div>
 </body>
 </html>
